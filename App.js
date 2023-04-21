@@ -105,7 +105,7 @@ function App() {
                 keyExtractor={(item) => item.id.toString()}
               />
               <TouchableOpacity style={styles.clearButton} onPress={handleClearCompletedTasks}>
-                <Text style={styles.clearButtonText}>Clear Completed</Text>
+                <Text style={styles.clearButtonText}>Clear</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.emailButton} onPress={handleEmailTasks}>
                 <Text style={styles.emailButtonText}>Email Tasks</Text>
