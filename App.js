@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -91,7 +91,7 @@ function App() {
             <View style={styles.container}>
               <TextInput
                 style={styles.input}
-                placeholder="Add Task"
+                placeholder="Ajoute une tâche"
                 value={task}
                 onChangeText={(text) => setTask(text)}
               />
@@ -108,7 +108,7 @@ function App() {
                 <Text style={styles.clearButtonText}>Clear</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.emailButton} onPress={handleEmailTasks}>
-                <Text style={styles.emailButtonText}>Email Tasks</Text>
+                <Text style={styles.emailButtonText}>Partager par Email</Text>
               </TouchableOpacity>
             </View>
           )}
