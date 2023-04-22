@@ -5,6 +5,7 @@
 
 >Les tâches peuvent également être marquées comme complétées ou non. 
 >Il faut cliquer sur la tâche pour qu'elle soit marquées comme complétées. 
+
 ![image](https://user-images.githubusercontent.com/105201941/233610808-532d4c60-260c-4110-a7b6-f1f9af4beb9b.png)
 
 >Il y a également un bouton pour supprimer toutes les tâches uniquement complétées (Clear) et un bouton pour envoyer la liste des tâches complété ou non par e-mail. Il y a une précision avec pour dire si elles sont complété ou non. (Je vous laisse découvrir l'objet du mail).
