@@ -1,4 +1,4 @@
->Ce code est une application de liste de tâches créée avec React Native. Il utilise les composants React tels que useState, useEffect, FlatList, TouchableOpacity et TextInput. L'application utilise également les packages @react-navigation/native et @react-navigation/stack pour la navigation entre les écrans.
+>Ce code est une application de liste de tâches créée avec React Native. Il utilise les composants React tels que useState, FlatList, TouchableOpacity et TextInput. L'application utilise également les packages @react-navigation/native et @react-navigation/stack pour la navigation entre les écrans.
 
 >L'application permet d'ajouter, de compléter et de supprimer des tâches de la liste. Je tiens à préciser qu'il est impossible de crée une tâche vide, un message d'erreur est prêt pour cette exemple :
 ![image](https://user-images.githubusercontent.com/105201941/233789507-6aa28df7-0199-4f2b-97b5-42090684b781.png)
