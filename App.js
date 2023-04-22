@@ -12,29 +12,30 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as MailComposer from 'expo-mail-composer';
 
+//Création d'une pile de navigation pour la liste des tâches
 const Stack = createStackNavigator();
 
 function App() {
+//Déclaration de deux états : une pour la tâche et l'autre pour la liste des tâches
   const [task, setTask] = useState('');
   const [taskList, setTaskList] = useState([]);
 
-
+//Fonction pour ajouter une nouvelle tâche à la liste des tâches
   const handleAddTask = () => {
     if (task.trim() === '') {
       Alert.alert('Erreur', 'La tâche ne peut pas être vide');
       return;
     }
-
     const newTask = {
       id: Date.now(),
       title: task.trim(),
       completed: false,
     };
 
-    setTaskList([...taskList, newTask]);
-    setTask('');
+    setTaskList([...taskList, newTask]); //Ajouter la nouvelle tâche à la liste des tâches
+    setTask('');  //Réinitialiser l'état de la tâche
   };
-
+//Fonction pour marquer une tâche comme complétée ou non complétée
   const handleCompleteTask = (id) => {
     const updatedTaskList = taskList.map((item) => {
       if (item.id === id) {
@@ -44,28 +45,29 @@ function App() {
       }
     });
 
-    setTaskList(updatedTaskList);
+    setTaskList(updatedTaskList); //Mettre à jour la liste des tâches
   };
-
+//Fonction pour supprimer une tâche de la liste des tâches
   const handleDeleteTask = (id) => {
     const updatedTaskList = taskList.filter((item) => item.id !== id);
     setTaskList(updatedTaskList);
   };
-
+//Fonction pour effacer toutes les tâches complétées de la liste des tâches
   const handleClearCompletedTasks = () => {
     const updatedTaskList = taskList.filter((item) => !item.completed);
     setTaskList(updatedTaskList);
   };
-
+//Fonction pour envoyer la liste des tâches par email
   const handleEmailTasks = () => {
     const taskListString = taskList.map((item) => `${item.title}${item.completed ? ' (complété)' : ''}`).join('\n');
     MailComposer.composeAsync({
-      recipients: ['ton-email@exemple.com'],
-      subject: 'La forme Mounir ?',
-      body: taskListString,
+      recipients: ['ton-email@exemple.com'], //Ajouter l'adresse email destinataire
+      subject: 'La forme Mounir ?', //Ajouter le sujet du message
+      body: taskListString, //Ajouter le contenu de la liste des tâches
     });
   };
 
+//Fonction pour afficher chaque tâche dans la liste des tâches
   const renderItem = ({ item }) => {
     return (
       <View style={styles.task}>
@@ -117,7 +119,7 @@ function App() {
     </NavigationContainer>
   );
 }
-
+//Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
